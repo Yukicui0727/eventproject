@@ -1,0 +1,11 @@
+<div class="seat-wrapper">
+    <div class="seat-table-wrapper">
+        <table class="seat-table" *ngIf="tableData">
+            <tbody>
+                <tr *ngFor="let seatRow of tableData.seatRows">
+                    <td *ngFor="let seat of seatRow.rowContents"> {{ seat.Availability }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="organizer-add-wrapper">
+    <h4>Create New Organizer</h4>
+    <form class="organizer-add-form" [formGroup]="fg">
+        <div class="two-col">
+            <input type="text" formControlName="Organizer_Name" placeholder="Organizer_Name">
+            <input type="text" formControlName="Email_Address" placeholder="Email_Address">
+        </div>
+        <div class="two-col">
+            <input type="password" formControlName="Password" placeholder="Password">
+            <input type="text" formControlName="Other_Details" placeholder="Other Details">
+        </div>
+        <div class="one-col">
+            <button [disabled]="isLoading" mat-raised-button (click)="onCreate()">Create</button>
+        </div>
+    </form>
+</div>

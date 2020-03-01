@@ -1,0 +1,17 @@
+<div class="organizerOrder-Create-wrapper">
+    <h4>Create New Organizer Order</h4>
+    <form class="organizerOrder-Create-form" [formGroup]="fg">
+        <div class="two-col">
+            <input type="text" formControlName="Organizerorder_ID" placeholder="Organizerorder_ID">
+            <input type="text" formControlName="Event_ID" placeholder="Event_ID">
+        </div>
+        <div class="two-col">
+            <input type="text" formControlName="organizerID" placeholder="Organizer_ID">
+            <input type="text" formControlName="date_Time" placeholder="date_Time">
+        </div>
+        <div class="one-col">
+            <button [disabled]="isLoading" mat-raised-button (click)="onCreate()">Create</button>
+        </div>
+    </form>
+</div>
+

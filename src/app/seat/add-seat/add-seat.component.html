@@ -1,0 +1,20 @@
+<div class="seat-add-wrapper">
+    <h4>Create New seat</h4>
+    <form class="seat-add-form" [formGroup]="fg">
+        <div class="four-col">
+            <input type="text" formControlName="Availability" placeholder="Availability">
+            <input type="text" formControlName="Category_ID" placeholder="Category_ID">
+            <input type="text" formControlName="Category_Name" placeholder="Category_Name">
+            <input type="text" formControlName="Col_Nume" placeholder="Col_Nume">
+        </div>
+        <div class="four-col">
+            <input type="text" formControlName="Price" placeholder="Price">
+            <input type="text" formControlName="Room_ID" placeholder="Room_ID">
+            <input type="text" formControlName="Row_Number" placeholder="Row_Number">
+            <input type="text" formControlName="Seat_ID" placeholder="Seat_ID">
+        </div>
+        <div class="one-col">
+            <button [disabled]="isLoading" mat-raised-button (click)="onCreate()">Create</button>
+        </div>
+    </form>
+</div>

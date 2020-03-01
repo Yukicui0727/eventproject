@@ -1,0 +1,27 @@
+.organizerorders-wrapper {
+    .organizerorders-navigator {
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        margin: .5em 0;
+        padding: .5em 0;
+    }
+
+    .organizerorders-navigator-wrapper {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+            list-style: none;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:active {
+                background-color: lightcyan;
+            }
+        }
+    }
+}

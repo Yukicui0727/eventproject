@@ -1,0 +1,14 @@
+<div class="orders-wrapper">
+    <div class="orders-navigator">
+        <ul class="orders-navigator-wrapper">
+            <li routerLinkActive="active-link" routerLink="/orders/organizerOrder">Organizer order</li>
+            <ul> <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/Get">Get Organizer order</li>
+                <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/Create">Create Organizer order</li>
+                <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/delete">Delete Organizer order</li>
+            </ul>
+            <li routerLinkActive="active-link" routerLink="/orders/customerOrder">Customer Order</li>
+        </ul>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

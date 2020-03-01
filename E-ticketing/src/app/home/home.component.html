@@ -1,0 +1,114 @@
+<div class="header_main_blur_wrapper">
+  <img class="header_main-bg_blur header_main-bg--blurred" src="/assets/unkle-crowd-silhouette-1024x584.png"
+    alt="consumer-header-background">
+</div>
+<!-- <div class="container">
+    <span>Site Name</span>
+  <mat-form-field class="searchbox" >
+    
+    <mat-icon matPrefix>search</mat-icon>
+    <input  matInput type="search" [(ngModel)]="value" placeholder="Search events">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-button [matMenuTriggerFor]="beforeMenu">Organize</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Overview</button>
+      <button mat-menu-item>price</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="beforeMenu">About</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>About Us</button>
+  <button mat-menu-item>Help Center</button>
+  <button mat-menu-item>Contact Us</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="beforeMenu">Create Event</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="beforeMenu">Sign in</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</div>-->
+<div class="header_main-bg-wrapper">
+  <img class="header_main-bg" src="/assets/unkle-crowd-silhouette-1024x584.png" alt="consumer-header-background">
+</div>
+
+
+<div class="container1">
+  <div class="row">
+    <div class="col-sm">
+      <form [formGroup]="stateForm">
+        <div>I want to go out</div>
+        <!-- <mat-form-field appearance="fill">
+                   <mat-label>Any Date</mat-label>
+                   <mat-select>
+                     <mat-option value="option">Today</mat-option>
+                     <mat-option value="option">Tomorrow</mat-option>
+                     <mat-option value="option">This Weekend</mat-option>
+                     <mat-option value="option">This Month</mat-option>
+                   </mat-select>
+                 </mat-form-field> -->
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>In</div>
+        <mat-form-field>
+          <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required
+            [matAutocomplete]="autoGroup">
+          <mat-autocomplete #autoGroup="matAutocomplete">
+            <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+              <mat-option *ngFor="let name of group.names" [value]="name">
+                {{name}}
+              </mat-option>
+            </mat-optgroup>
+          </mat-autocomplete>
+        </mat-form-field>
+        <div>And I am interested in for</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Anything</mat-label>
+          <mat-select>
+            <mat-option value="option">Music</mat-option>
+            <mat-option value="option">Sport&Fitness</mat-option>
+            <mat-option value="option">Health</mat-option>
+            <mat-option value="option">Holiday</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-fab color="primary">Go!</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- search event -->
+<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+  placeholder="&#61442;  Search">
+<section class="events-list-section">
+  <div class="events-list-container">
+    <a class="events-list-item" *ngFor="let event of events | filter: searchText"
+      [routerLink]="['/products/product-detail', event.id]">
+      <div>
+        <img src="{{event.image}}" width="160" height="160" />
+      </div>
+      <div class="events-list-item-price">
+        {{event.price | currency}}
+      </div>
+      <div class="events-list-item-name products-list-item-text">
+        {{event.name}}
+      </div>
+      <div class="events-list-item-brand products-list-item-text">
+        {{event.description}}
+        {{event.stock}}
+      </div>
+    </a>
+  </div>
+</section>

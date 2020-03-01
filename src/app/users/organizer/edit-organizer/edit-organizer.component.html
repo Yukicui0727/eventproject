@@ -1,0 +1,20 @@
+<div class="organizer-edit-wrapper">
+    <h4>Edit Basic Information</h4>
+    <form class="organizer-edit-form" [formGroup]="fg">
+        <div class="one-col">
+            <input type="text" formControlName="Organizer_Name" placeholder="Organizer_Name">
+        </div>
+        <br>
+        <div class="one-col">
+            <input type="password" formControlName="Password" placeholder="Password">
+        </div>
+        <br>
+        <div>
+        <input type="text" formControlName="Other_Details" placeholder="Other Details">
+        </div>
+        <br>
+        <div class="one-col">
+            <button [disabled]="isLoading" mat-raised-button (click)="onEdit()">Edit</button>
+        </div>
+    </form>
+</div>

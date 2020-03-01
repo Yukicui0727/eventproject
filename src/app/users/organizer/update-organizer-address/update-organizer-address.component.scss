@@ -1,0 +1,31 @@
+.organizer-address-update-wrapper {
+    padding-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .organizer-address-update-form {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+            margin-right: 1em;
+        }
+
+        .one-col,
+        .four-col {
+            margin-top: .5em;
+        }
+
+        .four-col {
+            display: flex;
+        }
+
+        .one-col {
+            display: flex;
+        }
+    }
+}
