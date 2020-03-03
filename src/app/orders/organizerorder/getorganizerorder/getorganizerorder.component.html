@@ -1,1 +1,19 @@
-<p>getorganizerorder works!</p>
+<div class="organizer-order-search-wrapper">
+    <h4>Search Order</h4>
+    <form class="organizer-order-search-form" >
+        <div class="search-row">
+            <input type="text" [formControl]="Organizer_Order_ID" placeholder="Organizer Order ID">
+            <button [disabled]="isLoading" mat-raised-button (click)="onSearch()">Search</button>
+        </div>
+    </form>
+
+    <div class="organizer-order-result-wrapper">
+        <div *ngFor="let searchedOrganizerorder of searchedOrganizersorder">
+            <ul>
+                <li *ngFor="let item of searchedOrganizerorder | keyvalue">
+                    {{item.key}}: {{item.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

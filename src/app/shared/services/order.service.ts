@@ -14,17 +14,10 @@ export class OrderService {
     private http: HttpClient
   ) { }
 
-  public getOrganizerOrder(id: string): Observable<any> {
-    return this.http.get(this.fqdnApp + '/organizerorder-api/getorganizerorder-info/' + id);
-  } 
-
-  public createOrganizerorder(payload: any): Observable<any> {
-    return this.http.post(this.fqdnApp + '/organizerorder-api/create', payload);
+  public searchOrganizerorder(id: string): Observable<any> {
+    return this.http.get(this.fqdnApp + '/organizerOrder-api/getorganizerorder-info/' + id);
   }
-  
   public deleteOrganizerorder(id: string): Observable<any> {
-    return this.http.delete(this.fqdnApp + '/organizerOrder-api/organizerorder/delete/' + id);
+    return this.http.get(this.fqdnApp + '/organizerOrder-api/organizerorder/delete/' + id);
   }
 }
-
-  

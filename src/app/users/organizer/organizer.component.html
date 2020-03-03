@@ -7,16 +7,17 @@
     </div>
     <ul>
       <li>Organizer_ID:339</li>
-      <br>
-      <br>
       <li>Organizer-Name:bunny9</li>
-      <br>
-      <br>
       <li>Email Address: bunny9@gmail.com</li>
-      <br>
       <li>Other Details: abc</li>
+      <br>
+      <li> Managing Orders<li> 
+      <li routerLinkActive="active-link" routerLink="/orders/organizerorder/getorganizerorder">Order Details</li>
+      <li routerLinkActive="active-link" routerLink="/orders/organizerorder/deleteorganizerorder">Cancel Order</li>
+      <li routerLinkActive="active-link" routerLink="/users/refund/CreateOrganizer">Refund</li>
     </ul>
   </div>
+  <router-outlet></router-outlet>  
   <div class="profile-content">
     <div class="actions">
       <i class="fa fa-cog"></i>
@@ -38,11 +39,7 @@
       <router-outlet></router-outlet>  
   </div>
 </div>
-<h5> Managing Orders</h5>
-<p>Order Details</p>
-<p>Search Order</p>
-<p>Cancel Order</p>
-<p> Refund </p>
+
 
 
 

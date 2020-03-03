@@ -1,1 +1,19 @@
-<p>deleteorganizerorder works!</p>
+<div class="organizer-order-delete-wrapper">
+    <h4>Cancel order</h4>
+    <form class="organizer-order-delete-form" >
+        <div class="delete-row">
+            <input type="text" [formControl]="Organizer_Order_ID" placeholder="Organizer Order ID">
+            <button [disabled]="isLoading" mat-raised-button (click)="onDelete()">Delete</button>
+        </div>
+    </form>
+
+    <div class="organizer-Order-result-wrapper">
+        <div *ngFor="let deletededOrganizerorder of deletedOrganizersorder">
+            <ul>
+                <li *ngFor="let item of deletededOrganizerorder | keyvalue">
+                    {{item.key}}: {{item.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

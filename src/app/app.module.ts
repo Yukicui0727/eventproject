@@ -44,7 +44,6 @@ import { DeleteOrganizerComponent } from './users/organizer/delete-organizer/del
 import { OrganizerComponent } from './users/organizer/organizer.component';
 import { SeatComponent } from './seat/seat.component';
 import { OrganizerorderComponent } from './orders/organizerorder/organizerorder.component';
-import { CreateOrganizerOrderComponent } from './orders/organizerorder/createorganizerorder/createorganizerorder.component';
 import { GetorganizerorderComponent } from './orders/organizerorder/getorganizerorder/getorganizerorder.component';
 import { DeleteorganizerorderComponent } from './orders/organizerorder/deleteorganizerorder/deleteorganizerorder.component';
 import { AddOrganizerAddressComponent } from './users/organizer/add-organizer-address/add-organizer-address.component';
@@ -56,7 +55,6 @@ import { UpdateOrganizerContactComponent } from './users/organizer/update-organi
 import { RefundComponent } from './users/refund/refund.component';
 import { GetOrganizerOrderRefundComponent } from './users/refund/get-organizer-order-refund/get-organizer-order-refund.component';
 import { CreateOrganizerOrderRefundComponent } from './users/refund/create-organizer-order-refund/create-organizer-order-refund.component';
-import { DeleteOrganizerOrderRefundComponent } from './users/refund/delete-organizer-order-refund/delete-organizer-order-refund.component';
 import { UpdateOrganizerOrderRefundComponent } from './users/refund/update-organizer-order-refund/update-organizer-order-refund.component';
 import { AddSeatComponent } from './seat/add-seat/add-seat.component';
 import { EditSeatComponent } from './seat/edit-seat/edit-seat.component';
@@ -85,7 +83,6 @@ import { AllSeatComponent } from './seat/all-seat/all-seat.component';
     OrganizerComponent,
     SeatComponent,
     OrganizerorderComponent,
-    CreateOrganizerOrderComponent,
     GetorganizerorderComponent,
     DeleteorganizerorderComponent,
     AddOrganizerAddressComponent,
@@ -97,7 +94,6 @@ import { AllSeatComponent } from './seat/all-seat/all-seat.component';
     RefundComponent,
     GetOrganizerOrderRefundComponent,
     CreateOrganizerOrderRefundComponent,
-    DeleteOrganizerOrderRefundComponent,
     UpdateOrganizerOrderRefundComponent,
     AddSeatComponent,
     EditSeatComponent,
