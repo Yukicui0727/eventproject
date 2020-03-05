@@ -1,0 +1,21 @@
+<div class="customer-order-search-wrapper">
+    <h4>Search Order</h4>
+    <form class="customer-order-search-form" >
+        <div class="search-row">
+            <input type="text" [formControl]="Customer_ID" placeholder="Customer ID">
+            <button [disabled]="isLoading" mat-raised-button (click)="onSearch()">Search</button>
+        </div>
+    </form>
+
+    <div class="customer-order-result-wrapper">
+        <div *ngFor="let searchedCustomerorder of searchedCustomersorder">
+            <ul>
+                <li *ngFor="let item of searchedCustomerorder | keyvalue">
+                    {{item.key}}: {{item.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

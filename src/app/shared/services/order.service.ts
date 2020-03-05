@@ -15,9 +15,15 @@ export class OrderService {
   ) { }
 
   public searchOrganizerorder(id: string): Observable<any> {
-    return this.http.get(this.fqdnApp + '/organizerOrder-api/getorganizerorder-info/' + id);
+    return this.http.get(this.fqdnApp + '/organizerOrder-api/getallorganizerorder-info/' + id);
   }
   public deleteOrganizerorder(id: string): Observable<any> {
     return this.http.get(this.fqdnApp + '/organizerOrder-api/organizerorder/delete/' + id);
+  }
+  public searchCustomerorder(id: string): Observable<any> {
+    return this.http.get(this.fqdnApp + '/customerOrder-api/CustomerOrderByCID/' + id);
+  }
+  public deleteCustomerrorder(id: string): Observable<any> {
+    return this.http.get(this.fqdnApp + '/customerOrder-api/CustomerOrder/Delete/' + id);
   }
 }

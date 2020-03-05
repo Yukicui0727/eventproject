@@ -26,7 +26,10 @@ import { RefundComponent } from './users/refund/refund.component';
 import { CreateOrganizerOrderRefundComponent } from './users/refund/create-organizer-order-refund/create-organizer-order-refund.component';
 import { SeatComponent } from './seat/seat.component';
 import { AddSeatComponent } from './seat/add-seat/add-seat.component';
-
+import { CustomerComponent } from './customer/customer.component';
+import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomerorder.component';
+import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
+import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,10 @@ const routes: Routes = [
           {
             path: 'CreateOrganizer',
             component: CreateOrganizerOrderRefundComponent
+          },
+          {
+            path: 'CreateCustomer',
+            component: CreateCustomerOrderRefundComponent
           }
         ]
       },
@@ -50,6 +57,7 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent
       },
+      
       {
         path: 'register',
         component: RegisterComponent
@@ -106,6 +114,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'customer',
+    component: CustomerComponent
+  },
+  {
     path: 'seat',
     component: SeatComponent,
     children: [
@@ -147,6 +159,14 @@ const routes: Routes = [
       {
         path: 'organizerorder/deleteorganizerorder',
         component: DeleteorganizerorderComponent
+      },
+      {
+        path: 'getcustomerorder',
+        component: GetcustomerorderComponent
+      },
+      {
+        path: 'deletecustomerorder',
+        component: DeletecustomerorderComponent
       },
     ]
   },

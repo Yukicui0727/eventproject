@@ -1,0 +1,19 @@
+<div class="Customer-order-delete-wrapper">
+    <h4>Cancel order</h4>
+    <form class="customer-order-delete-form" >
+        <div class="delete-row">
+            <input type="text" [formControl]="Customer_Order_ID" placeholder="Customer Order ID">
+            <button [disabled]="isLoading" mat-raised-button (click)="onDelete()">Delete</button>
+        </div>
+    </form>
+
+    <div class="customer-Order-result-wrapper">
+        <div *ngFor="let deletededCustomerorder of deletedCustomersorder">
+            <ul>
+                <li *ngFor="let item of deletededCustomerorder | keyvalue">
+                    {{item.key}}: {{item.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

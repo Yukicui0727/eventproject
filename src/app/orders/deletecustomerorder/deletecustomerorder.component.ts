@@ -3,35 +3,36 @@ import { OrderService } from 'src/app/shared/services/order.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-getorganizerorder',
-  templateUrl: './getorganizerorder.component.html',
-  styleUrls: ['./getorganizerorder.component.scss']
+  selector: 'app-deletecustomerorder',
+  templateUrl: './deletecustomerorder.component.html',
+  styleUrls: ['./deletecustomerorder.component.scss']
 })
-export class GetorganizerorderComponent implements OnInit {
+export class DeletecustomerorderComponent implements OnInit {
+
 
   public isLoading = false;
-  public Organizer_ID: FormControl
-  public searchedOrganizersorder = [];
+  public Customer_Order_ID: FormControl
+  public deletedCustomersorder = [];
 
   constructor(
     private orderService: OrderService
   ) { }
 
   ngOnInit(): void {
-    this.Organizer_ID = new FormControl();
+    this.Customer_Order_ID = new FormControl();
   }
 
-  public onSearch() {
+  public onDelete() {
     this.isLoading = true;
-    this.searchedOrganizersorder = [];
-    this.orderService.searchOrganizerorder(this.Organizer_ID.value).subscribe(
+    this.deletedCustomersorder = [];
+    this.orderService.deleteCustomerrorder(this.Customer_Order_ID.value).subscribe(
       res => {
         this.isLoading = false;
         if (res.message) {
           alert(res.message);
           return;
         }
-        this.searchedOrganizersorder = res;
+        this.deletedCustomersorder = res;
       },
       error => {
         this.isLoading = false;

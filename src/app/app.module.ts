@@ -62,6 +62,10 @@ import { SearchSeatComponent } from './seat/search-seat/search-seat.component';
 import { DeleteSeatComponent } from './seat/delete-seat/delete-seat.component';
 import { AvailableSeatComponent } from './seat/available-seat/available-seat.component';
 import { AllSeatComponent } from './seat/all-seat/all-seat.component';
+import { CustomerComponent } from './customer/customer.component';
+import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomerorder.component';
+import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
+import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +105,10 @@ import { AllSeatComponent } from './seat/all-seat/all-seat.component';
     DeleteSeatComponent,
     AvailableSeatComponent,
     AllSeatComponent,
+    CustomerComponent,
+    GetcustomerorderComponent,
+    DeletecustomerorderComponent,
+    CreateCustomerOrderRefundComponent,
    
 
   ],

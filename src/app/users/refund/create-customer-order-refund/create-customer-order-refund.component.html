@@ -1,0 +1,17 @@
+<div class="Customer-Refund-wrapper">
+    <h4>Create Customer Refund</h4>
+    <form class="Customer-Refund-form" [formGroup]="fg">
+        <div class="one-col">
+            <input type="text" formControlName="Customer_Order_ID" placeholder="Customer_Order_ID">
+        </div>
+        <br>
+        <div class="one-col">
+            <input type="text" formControlName="Description" placeholder="Description">
+        </div>
+        <br>
+        <div class="one-col">
+            <button [disabled]="isLoading" mat-raised-button (click)="onCreate()">Create</button>
+        </div>
+    </form>
+</div>
+

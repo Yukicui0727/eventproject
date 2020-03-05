@@ -17,4 +17,7 @@ export class  RefundService{
   public CreateOrganizerOrderRefund(payload: any): Observable<any> {
     return this.http.post(this.fqdnApp + '/organizer_refund/create', payload);
   }
+  public CreateCustomerOrderRefund(payload: any): Observable<any> {
+    return this.http.post(this.fqdnApp + '/customer_refund/create', payload);
+  }
 }
