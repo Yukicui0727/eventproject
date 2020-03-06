@@ -5,42 +5,97 @@
       <img src="https://media-exp1.licdn.com/dms/image/C510BAQFnrE9mMLfVPg/company-logo_200_200/0?e=1591228800&v=beta&t=NU1viuHy0U35tsqJUQAdV4Ig0kHbZyTwiFxy9Z5621s" alt="">
     </div>
     <ul>
-      <li>Organizer_ID:1312</li>
-      <li>Organizer-Name:bunny9</li>
-      <li>Email Address: bunny9@gmail.com</li>
-      <li>Other Details: abc</li>
+      <h6>Organizer_ID:1312</h6>
       <br>
-      <li> Managing Orders<li> 
+      <h6>Organizer-Name:bunny9</h6>
+      <br>
+      <h6>Email Address: bunny9@gmail.com</h6>
+      <br>
+      <h6>Other Details: abc</h6>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h6> Managing Orders</h6> 
       <li routerLinkActive="active-link" routerLink="/orders/organizerorder/getorganizerorder">Order Details</li>
+      <br>
       <li routerLinkActive="active-link" routerLink="/orders/organizerorder/deleteorganizerorder">Cancel Order</li>
+      <br>
       <li routerLinkActive="active-link" routerLink="/users/refund/CreateOrganizer">Refund</li>
     </ul>
   </div>
-  <router-outlet></router-outlet>  
-  <div class="profile-content">
-    <div class="pic">
-      <img src="https://media-exp1.licdn.com/dms/image/C510BAQFnrE9mMLfVPg/company-logo_200_200/0?e=1591228800&v=beta&t=NU1viuHy0U35tsqJUQAdV4Ig0kHbZyTwiFxy9Z5621s" alt="">
-      <h6>Basic Information</h6>
-    </div>
-    <br>
-    <br>
+ <router-outlet></router-outlet>  
     <div class="profile-details">
+      <h3>Account Information</h3>
+      <HR>
+      <h5> Account email address</h5>
+      <p>bunny9@gmail.com</p>
+      <h5>Contact Information</h5>
         <ul>
-            <li routerLinkActive="active-link" routerLink="/users/organizer/edit">Edit Basic Information</li>
-            <br>
-            <li routerLinkActive="active-link" routerLink="/users/organizer/addOrganizeraddress">Add Address</li>
-            <br>
-            <li routerLinkActive="active-link" routerLink="/users/organizer/updateOrganizeraddress">Update address</li>
-            <br>
-            <li routerLinkActive="active-link" routerLink="/users/organizer/addOrganizercontact">Add Contact</li>
-            <br>
-            <li routerLinkActive="active-link" routerLink="/users/organizer/updateOrganizercontact">Update Contact</li>
+          <p>Edit Basic Information</p>
+            <div class="four-col">
+              <input type="text" formControlName="Organizer_Name" placeholder="Organizer_Name">
+              <input type="password" formControlName="Password" placeholder="Password">
+              <input type="text" formControlName="Other_Details" placeholder="Other Details">
+              <button>Create</button>
+            </div>
+           
+         
+          
+          
+            <p>Add Address</p>
+            <div class="four-col">
+              <input type="text" formControlName="Street1" placeholder="Street1">
+              <input type="text" formControlName="Street2" placeholder="Street2">
+              <input type="text" formControlName="City" placeholder="City">
+              <input type="text" formControlName="State" placeholder="State">
+            </div>
+            <div class="four-col">
+              <input type="text" formControlName="zipcode" placeholder="zipcode">
+              <input type="text" formControlName="Other_Details" placeholder="Other Details">
+              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
+              <button>Add</button>
+             </div>
+
+            <p>Update address</p>
+            <div class="four-col">
+              <input type="text" formControlName="Address_ID" placeholder="Address_ID">
+              <input type="text" formControlName="Street1" placeholder="Street1">
+              <input type="text" formControlName="Street2" placeholder="Street2">
+              <input type="text" formControlName="City" placeholder="City">  
+            </div>
+            <div class="five-col">
+              <input type="text" formControlName="State" placeholder="State">
+              <input type="text" formControlName="zipcode" placeholder="zipcode">
+              <input type="text" formControlName="Other_Details" placeholder="Other Details">
+              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
+              <button>Update</button>
+            </div>
+
+            <p>Add Contact</p>
+            <div class="Four-col">
+              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
+              <input type="text" formControlName="Contact_Name" placeholder="Contact_Name">
+              <input type="text" formControlName="Telephone" placeholder="Telephone">
+              <input type="text" formControlName="web_site_address" placeholder="web_site_address">
+          </div>
+          <div class="two-col">
+              <input type="text" formControlName="address_ID" placeholder="address_ID">
+              <button>Add</button>
+          </div>
+           
+            <p>Update Contact</p>
+            <div class="Four-col">
+              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
+              <input type="text" formControlName="Contact_ID" placeholder="Contact_ID">
+              <input type="text" formControlName="Telephone" placeholder="Telephone"> 
+              <input type="text" formControlName="web_site_address" placeholder="web_site_address">
+            </div>
+            <div class="two-col">
+              <input type="text" formControlName="Address_ID" placeholder="Address_ID">
+              <button>Update</button>
+          </div>  
         </ul>
       </div> 
       <router-outlet></router-outlet>  
   </div>
-</div>
-
-
-
-

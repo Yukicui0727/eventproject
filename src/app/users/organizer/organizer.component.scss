@@ -4,10 +4,10 @@ body{
     background: linear-gradient(to right, #003e6e 0%, #056cc6 100%);
   }
   .profile-container{
-    width: 1500px;
-    height: 700px;
-    margin: 0 auto;
-    margin-top: 140px;
+    width: 1200px;
+    height: auto;
+    margin: 5 auto;
+    margin-top: 10px;
     .profile-menu{
       float: left;
       width: 37%;
@@ -49,6 +49,37 @@ body{
       float:right;
       background: #ffffff;
       box-shadow: 0 0px 25px rgba(#000000, 0.2);
+      .organizer-add-wrapper {
+        padding-top: 1em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .organizer-add-form {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            input {
+                margin-right: 1em;
+            }
+    
+            .one-col,
+            .two-col {
+                margin-top: .5em;
+            }
+    
+            .two-col {
+                display: flex;
+            }
+    
+            .one-col {
+                display: flex;
+            }
+        }
+    }
       .actions{
         width: 100%;
         background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
@@ -112,7 +143,7 @@ body{
         ul{
           list-style: none;
           padding: 0;
-          margin: 0;
+          margin: 5;
           color: #929292;
           li{
             line-height: 50px;
@@ -145,3 +176,4 @@ body{
       }
     }
   }
+  
