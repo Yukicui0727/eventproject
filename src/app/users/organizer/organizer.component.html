@@ -1,101 +1,193 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<div class="profile-container">
-  <div class="profile-menu">
-    <div class="image-container">
-      <img src="https://media-exp1.licdn.com/dms/image/C510BAQFnrE9mMLfVPg/company-logo_200_200/0?e=1591228800&v=beta&t=NU1viuHy0U35tsqJUQAdV4Ig0kHbZyTwiFxy9Z5621s" alt="">
+<div class="container">
+  <div [hidden]="!submitted">
+    <h3>Account Information</h3>
+    <form (ngSubmit)="onSubmit()" #organizerForm="ngForm">
+      <br>
+      <hr>
+      <h4>Basic Information</h4>
+      <div class="form-group">
+        <label for="account name">Account Name</label>
+        <input type="text" class="form-control" id="Account Name"
+               [(ngModel)]="model.accountname" name="accountname">
+      </div>
+
+      <div class="form-group">
+        <label for="email address">Email Address</label>
+        <input type="text" class="form-control" id="Email Address"
+               [(ngModel)]="model.emailaddress" name="emailaddress">
+      </div>
+
+      <div class="form-group">
+        <label for="other details">Other Details</label>
+        <input type="text" class="form-control" id="Other Details"
+               [(ngModel)]="model.otherdetails" name="otherdetails">
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
+     
+
+
+      <br>
+      <hr>
+      <h4>Contact Information</h4>
+      <div class="form-group">
+        <label for="contact name">Contact Name</label>
+        <input type="text" class="form-control" id="Contact Name"
+               [(ngModel)]="model.contactname" name="contactname">
+      </div>
+     
+     <div class="form-group">
+        <label for="telephone">Telephone</label>
+        <input type="text" class="form-control" id="Telephone"
+               [(ngModel)]="model.telephone" name="telephone">
+      </div>
+
+      <div class="form-group">
+        <label for="website address">Wedsite Address</label>
+        <input type="text" class="form-control" id="Wedsite Address"
+               [(ngModel)]="model.websiteaddress" name="websiteaddress">
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
+      
+      <br>
+      <hr>
+      <h4>Address</h4>
+      <div class="form-group">
+        <label for="street1">Street1</label>
+        <input type="text" class="form-control" id="Street1"
+               [(ngModel)]="model.street1" name="Street1">
+      </div>
+
+      <div class="form-group">
+        <label for="street2">Street2</label>
+        <input type="text" class="form-control" id="Street2"
+               [(ngModel)]="model.street2" name="street2">
+      </div>
+
+      <div class="form-group">
+        <label for="city">city</label>
+        <input type="text" class="form-control" id="City"
+               [(ngModel)]="model.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="State"
+               [(ngModel)]="model.state" name="state">
+      </div>
+     
+     <div class="form-group">
+        <label for="zipcode">Zip Code</label>
+        <input type="text" class="form-control" id="Zip Code"
+               [(ngModel)]="model.zipcode" name="zipcode">
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
+      
+    </form>
+  </div>
+
+  <div [hidden]="submitted">
+    <h3>Account Information</h3>
+    <br>
+    <hr>
+    <h4>Basic Information</h4>
+    <div class="row">
+      <div class="col-xs-3">Account_Name:</div>
+      <div class="col-xs-9">{{ model.accountname }}</div>
     </div>
-    <ul>
-      <h6>Organizer_ID:1312</h6>
-      <br>
-      <h6>Organizer-Name:bunny9</h6>
-      <br>
-      <h6>Email Address: bunny9@gmail.com</h6>
-      <br>
-      <h6>Other Details: abc</h6>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h6> Managing Orders</h6> 
-      <li routerLinkActive="active-link" routerLink="/orders/organizerorder/getorganizerorder">Order Details</li>
-      <br>
-      <li routerLinkActive="active-link" routerLink="/orders/organizerorder/deleteorganizerorder">Cancel Order</li>
-      <br>
-      <li routerLinkActive="active-link" routerLink="/users/refund/CreateOrganizer">Refund</li>
-    </ul>
-  </div>
- <router-outlet></router-outlet>  
-    <div class="profile-details">
-      <h3>Account Information</h3>
-      <HR>
-      <h5> Account email address</h5>
-      <p>bunny9@gmail.com</p>
-      <h5>Contact Information</h5>
-        <ul>
-          <p>Edit Basic Information</p>
-            <div class="four-col">
-              <input type="text" formControlName="Organizer_Name" placeholder="Organizer_Name">
-              <input type="password" formControlName="Password" placeholder="Password">
-              <input type="text" formControlName="Other_Details" placeholder="Other Details">
-              <button>Create</button>
-            </div>
-           
-         
-          
-          
-            <p>Add Address</p>
-            <div class="four-col">
-              <input type="text" formControlName="Street1" placeholder="Street1">
-              <input type="text" formControlName="Street2" placeholder="Street2">
-              <input type="text" formControlName="City" placeholder="City">
-              <input type="text" formControlName="State" placeholder="State">
-            </div>
-            <div class="four-col">
-              <input type="text" formControlName="zipcode" placeholder="zipcode">
-              <input type="text" formControlName="Other_Details" placeholder="Other Details">
-              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
-              <button>Add</button>
-             </div>
+    <div class="row">
+      <div class="col-xs-3">Email_Address:</div>
+      <div class="col-xs-9">{{ model.emailaddress }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Other_Details:</div>
+      <div class="col-xs-9">{{ model.otherdetails }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
+    
+    <br>
+    <hr>
+    <h4>Contact Information</h4>
+    <div class="row">
+      <div class="col-xs-3">Contact_Name:</div>
+      <div class="col-xs-9">{{ model.contactname }}</div>
+    </div>
 
-            <p>Update address</p>
-            <div class="four-col">
-              <input type="text" formControlName="Address_ID" placeholder="Address_ID">
-              <input type="text" formControlName="Street1" placeholder="Street1">
-              <input type="text" formControlName="Street2" placeholder="Street2">
-              <input type="text" formControlName="City" placeholder="City">  
-            </div>
-            <div class="five-col">
-              <input type="text" formControlName="State" placeholder="State">
-              <input type="text" formControlName="zipcode" placeholder="zipcode">
-              <input type="text" formControlName="Other_Details" placeholder="Other Details">
-              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
-              <button>Update</button>
-            </div>
+    <div class="row">
+      <div class="col-xs-3">Telephone:</div>
+      <div class="col-xs-9">{{ model.telephone }}</div>
+    </div>
 
-            <p>Add Contact</p>
-            <div class="Four-col">
-              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
-              <input type="text" formControlName="Contact_Name" placeholder="Contact_Name">
-              <input type="text" formControlName="Telephone" placeholder="Telephone">
-              <input type="text" formControlName="web_site_address" placeholder="web_site_address">
-          </div>
-          <div class="two-col">
-              <input type="text" formControlName="address_ID" placeholder="address_ID">
-              <button>Add</button>
-          </div>
-           
-            <p>Update Contact</p>
-            <div class="Four-col">
-              <input type="text" formControlName="Organizer_ID" placeholder="Organizer_ID">
-              <input type="text" formControlName="Contact_ID" placeholder="Contact_ID">
-              <input type="text" formControlName="Telephone" placeholder="Telephone"> 
-              <input type="text" formControlName="web_site_address" placeholder="web_site_address">
-            </div>
-            <div class="two-col">
-              <input type="text" formControlName="Address_ID" placeholder="Address_ID">
-              <button>Update</button>
-          </div>  
-        </ul>
-      </div> 
-      <router-outlet></router-outlet>  
+    <div class="row">
+      <div class="col-xs-3">Website_address:</div>
+      <div class="col-xs-9">{{ model.websiteaddress }}</div>
+    </div>
+   <br>
+    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
+    
+    <br>
+      <hr>
+      <h4>Address</h4>
+      <div class="row">
+      <div class="col-xs-3">Street1:</div>
+      <div class="col-xs-9">{{ model.street1 }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">Street2:</div>
+      <div class="col-xs-9">{{ model.street2 }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">City:</div>
+      <div class="col-xs-9">{{ model.city }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">State:</div>
+      <div class="col-xs-9">{{ model.state }}</div>
+    </div>
+   
+   <div class="row">
+      <div class="col-xs-3">Zip_code:</div>
+      <div class="col-xs-9">{{ model.zipcode }}</div>
+    </div>
+   <br>
+    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
+    
   </div>
+  </div>
+
+
+
+
+
+<!-- ====================================================  -->
+  <div>
+    <form>
+
+       <!-- ... all of the form ... -->
+
+    </form>
+  </div>
+
+<!-- ====================================================  -->
+<hr>
+<style>
+  .no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+  .no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
+</style>
+
+
+
