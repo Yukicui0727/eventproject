@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Organizer } from './organizer';
+import { OrganizerService } from 'src/app/shared/services/organizer.service';
+
+
 
 @Component({
   selector: 'app-organizer',
@@ -8,14 +11,18 @@ import { Organizer } from './organizer';
 })
 export class OrganizerComponent {
 
+  model = new Organizer(1318, 'regal 2', 'regal@gmail.com', 'theater', 'bunny', '12345678', 'regal.com', '188 SW ST', 'Suite 12', 'bellevue', 'WA', '98005');
+  
+  y = Object.assign({}, this.model); 
   
 
-  model = new Organizer(339, 'bunny9','bunny9@gmail.com', 'abc','bunny','12345678','uuu123.com','uoo','111','bellevue','WA','98005');
+ display = false;
 
-  submitted = false;
+onSave() { this.display = false; }
+Cancel() { this.model=Object.assign({}, this.y);this.display = false; 
+  
+}
 
-  onSubmit() { this.submitted = true; }
-  Cancel() { this.submitted = false; }
- 
-  get diagnostic() { return JSON.stringify(this.model); }
+get diagnostic() { return JSON.stringify(this.model); }
+
 }

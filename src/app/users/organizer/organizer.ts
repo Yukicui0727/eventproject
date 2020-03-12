@@ -2,7 +2,7 @@ export class Organizer {
 
     constructor(
       public id: number,
-      public accountname: string,
+      public organizername: string,
       public emailaddress: string,
       public otherdetails: string,
       public contactname: string,

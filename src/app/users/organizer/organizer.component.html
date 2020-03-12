@@ -1,14 +1,14 @@
-<div class="container">
-  <div [hidden]="!submitted">
+<div class="organizer-update-wrapper">
+  <div [hidden]="!display">
     <h3>Account Information</h3>
-    <form (ngSubmit)="onSubmit()" #organizerForm="ngForm">
+    <form (ngSubmit)="onSave()" #organizerupdatedForm="ngForm">
       <br>
       <hr>
       <h4>Basic Information</h4>
       <div class="form-group">
-        <label for="account name">Account Name</label>
-        <input type="text" class="form-control" id="Account Name"
-               [(ngModel)]="model.accountname" name="accountname">
+        <label for="account name">Organizer Name</label>
+        <input type="text" class="form-control" id="Organizer Name"
+               [(ngModel)]="model.organizername" name="organizername">
       </div>
 
       <div class="form-group">
@@ -23,11 +23,15 @@
                [(ngModel)]="model.otherdetails" name="otherdetails">
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizerupdatedForm.form.valid" (click)="onSave()">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
-     
+    
+    </form>
+  </div> 
 
-
+  <div class="organizer-contact-update-wrapper">
+    <div [hidden]="!display">
+      <form (ngSubmit)="onSave()" #organizercontactForm="ngForm">
       <br>
       <hr>
       <h4>Contact Information</h4>
@@ -49,9 +53,14 @@
                [(ngModel)]="model.websiteaddress" name="websiteaddress">
       </div>
       
-      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizercontactForm.form.valid" (click)="onSave()">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
-      
+    </form>
+  </div>
+
+  <div class="organizer-address-update-wrapper">
+    <div [hidden]="!display">
+      <form (ngSubmit)="onSave()" #organizeraddressForm="ngForm">
       <br>
       <hr>
       <h4>Address</h4>
@@ -85,20 +94,20 @@
                [(ngModel)]="model.zipcode" name="zipcode">
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="submitted=false">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizeraddressForm.form.valid" (click)="onSave()">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
       
     </form>
   </div>
 
-  <div [hidden]="submitted">
+  <div [hidden]="display">
     <h3>Account Information</h3>
     <br>
     <hr>
     <h4>Basic Information</h4>
     <div class="row">
-      <div class="col-xs-3">Account_Name:</div>
-      <div class="col-xs-9">{{ model.accountname }}</div>
+      <div class="col-xs-3">Organizer_Name:</div>
+      <div class="col-xs-9">{{ model.organizername }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Email_Address:</div>
@@ -109,8 +118,10 @@
       <div class="col-xs-9">{{ model.otherdetails }}</div>
     </div>
     <br>
-    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
-    
+    <button class="btn btn-primary" (click)="display=true">Edit</button>
+    </div>
+
+    <div [hidden]="display">
     <br>
     <hr>
     <h4>Contact Information</h4>
@@ -129,8 +140,10 @@
       <div class="col-xs-9">{{ model.websiteaddress }}</div>
     </div>
    <br>
-    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
-    
+    <button class="btn btn-primary" (click)="display=true">Edit</button>
+    </div>
+
+    <div [hidden]="display">
     <br>
       <hr>
       <h4>Address</h4>
@@ -159,7 +172,7 @@
       <div class="col-xs-9">{{ model.zipcode }}</div>
     </div>
    <br>
-    <button class="btn btn-primary" (click)="submitted=true">Edit</button>
+    <button class="btn btn-primary" (click)="display=true">Edit</button>
     
   </div>
   </div>
