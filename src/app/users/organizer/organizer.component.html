@@ -1,7 +1,7 @@
-<div class="organizer-update-wrapper">
+<div class="container">
   <div [hidden]="!display">
     <h3>Account Information</h3>
-    <form (ngSubmit)="onSave()" #organizerupdatedForm="ngForm">
+    <form (ngSubmit)="onSave()" #organizerForm="ngForm">
       <br>
       <hr>
       <h4>Basic Information</h4>
@@ -23,15 +23,11 @@
                [(ngModel)]="model.otherdetails" name="otherdetails">
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!organizerupdatedForm.form.valid" (click)="onSave()">Save</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="display=false">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
-    
-    </form>
-  </div> 
+     
 
-  <div class="organizer-contact-update-wrapper">
-    <div [hidden]="!display">
-      <form (ngSubmit)="onSave()" #organizercontactForm="ngForm">
+
       <br>
       <hr>
       <h4>Contact Information</h4>
@@ -53,14 +49,9 @@
                [(ngModel)]="model.websiteaddress" name="websiteaddress">
       </div>
       
-      <button type="submit" class="btn btn-success" [disabled]="!organizercontactForm.form.valid" (click)="onSave()">Save</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="display=false">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
-    </form>
-  </div>
-
-  <div class="organizer-address-update-wrapper">
-    <div [hidden]="!display">
-      <form (ngSubmit)="onSave()" #organizeraddressForm="ngForm">
+      
       <br>
       <hr>
       <h4>Address</h4>
@@ -94,7 +85,7 @@
                [(ngModel)]="model.zipcode" name="zipcode">
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!organizeraddressForm.form.valid" (click)="onSave()">Save</button>
+      <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="display=false">Save</button>
       <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
       
     </form>
@@ -119,9 +110,7 @@
     </div>
     <br>
     <button class="btn btn-primary" (click)="display=true">Edit</button>
-    </div>
-
-    <div [hidden]="display">
+    
     <br>
     <hr>
     <h4>Contact Information</h4>
@@ -141,9 +130,7 @@
     </div>
    <br>
     <button class="btn btn-primary" (click)="display=true">Edit</button>
-    </div>
-
-    <div [hidden]="display">
+    
     <br>
       <hr>
       <h4>Address</h4>
