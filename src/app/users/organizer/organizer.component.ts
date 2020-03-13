@@ -96,7 +96,7 @@ onSaveaddress() {
 }
 
 Cancel() {
-  this.model = Object.assign({}, this.Copymodel); this.display_basic = true; this.display_contact = true; this.display_address = true;
+  this.model = Object.assign({}, this.Copymodel);this.display_personal = true;  this.display_basic = true; this.display_contact = true; this.display_address = true;
 }
 
 get diagnostic() { return JSON.stringify(this.model); }
