@@ -19,7 +19,7 @@ export class OrganizerService {
   }
 
   public editOrganizer(payload: any): Observable<any> {
-    return this.http.put(this.fqdnApp + '/organizer-api/organizer/edit', payload);
+    return this.http.put(this.fqdnApp + '/organizer-api/organizer/update', payload);
   }
   public searchOrganizer(id: string): Observable<any> {
     return this.http.get(this.fqdnApp + '/organizer-api/organizer/search/' + id);
@@ -29,13 +29,13 @@ export class OrganizerService {
   }
   public addOrganizeraddress(payload: any): Observable<any> {
     return this.http.post(this.fqdnApp + '/organizer-api/organizer/address/create', payload);
-  }
+  }                                       
   public searchOrganizeraddress(id: string): Observable<any> {
     return this.http.get(this.fqdnApp + '/organizer-api/organizer/address/search/' + id);
   }
   public updateOrganizeraddress(payload: any): Observable<any> {
     return this.http.put(this.fqdnApp + '/organizer-api/organizer/address/update', payload);
-  }
+  }                                      
   public addOrganizercontact(payload: any): Observable<any> {
     return this.http.post(this.fqdnApp + '/organizer-api/organizer/contact/create', payload);
   }
@@ -44,7 +44,10 @@ export class OrganizerService {
   }
   public updateOrganizercontact(payload: any): Observable<any> {
     return this.http.put(this.fqdnApp + '/organizer-api/organizer/contact/update', payload);
-  }
+  }   
+  public changeOrganizeremail(payload: any): Observable<any> {
+    return this.http.post(this.fqdnApp + '/organizer-api/changeEmail', payload);
+  }                                    
 }
 
 
