@@ -37,21 +37,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { StoreModule } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { AddOrganizerComponent } from './users/organizer/add-organizer/add-organizer.component';
-import { SearchOrganizerComponent } from './users/organizer/search-organizer/search-organizer.component';
-import { EditOrganizerComponent } from './users/organizer/edit-organizer/edit-organizer.component';
-import { DeleteOrganizerComponent } from './users/organizer/delete-organizer/delete-organizer.component';
 import { OrganizerComponent } from './users/organizer/organizer.component';
 import { SeatComponent } from './seat/seat.component';
 import { OrganizerorderComponent } from './orders/organizerorder/organizerorder.component';
 import { GetorganizerorderComponent } from './orders/organizerorder/getorganizerorder/getorganizerorder.component';
 import { DeleteorganizerorderComponent } from './orders/organizerorder/deleteorganizerorder/deleteorganizerorder.component';
-import { AddOrganizerAddressComponent } from './users/organizer/add-organizer-address/add-organizer-address.component';
-import { SearchOrganizerAddressComponent } from './users/organizer/search-organizer-address/search-organizer-address.component';
-import { UpdateOrganizerAddressComponent } from './users/organizer/update-organizer-address/update-organizer-address.component';
-import { AddOrganizerContactComponent } from './users/organizer/add-organizer-contact/add-organizer-contact.component';
-import { SearchOrganizerContactComponent } from './users/organizer/search-organizer-contact/search-organizer-contact.component';
-import { UpdateOrganizerContactComponent } from './users/organizer/update-organizer-contact/update-organizer-contact.component';
 import { RefundComponent } from './users/refund/refund.component';
 import { GetOrganizerOrderRefundComponent } from './users/refund/get-organizer-order-refund/get-organizer-order-refund.component';
 import { CreateOrganizerOrderRefundComponent } from './users/refund/create-organizer-order-refund/create-organizer-order-refund.component';
@@ -80,21 +70,11 @@ import { CreateCustomerOrderRefundComponent } from './users/refund/create-custom
     UserInfoComponent,
     ProductsComponent,
     ShoppingCartComponent,
-    AddOrganizerComponent,
-    SearchOrganizerComponent,
-    EditOrganizerComponent,
-    DeleteOrganizerComponent,
     OrganizerComponent,
     SeatComponent,
     OrganizerorderComponent,
     GetorganizerorderComponent,
     DeleteorganizerorderComponent,
-    AddOrganizerAddressComponent,
-    SearchOrganizerAddressComponent,
-    UpdateOrganizerAddressComponent,
-    AddOrganizerContactComponent,
-    SearchOrganizerContactComponent,
-    UpdateOrganizerContactComponent,
     RefundComponent,
     GetOrganizerOrderRefundComponent,
     CreateOrganizerOrderRefundComponent,
