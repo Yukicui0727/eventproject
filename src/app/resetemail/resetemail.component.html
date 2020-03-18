@@ -1,0 +1,19 @@
+<main class="container">
+  <mat-card fxFlex.gt-sm="60%" fxFlexOffset.gt-sm="20%">
+    <mat-card-title>Reset Email</mat-card-title>
+    <form [formGroup]="resetemailFormGroup" (ngSubmit)="onSubmit()" fxLayout="column" #resetemailForm="ngForm">
+      <mat-form-field>
+        <mat-placeholder>Please Paste Token from Email</mat-placeholder>
+        <input type="text" matInput id="token" name="token" formControlName="token" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-placeholder>Input New Email</mat-placeholder>
+        <input [type]="show ? 'text' : 'email'" matInput id="email" formControlName="email" required>
+      </mat-form-field>
+      <div>
+        <button type="submit" mat-raised-button color="primary" style="background-color: #66A756;">Reset email</button>
+      </div>
+    </form>
+  </mat-card>
+</main>

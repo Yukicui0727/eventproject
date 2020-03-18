@@ -20,11 +20,16 @@ import { CustomerComponent } from './customer/customer.component';
 import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomerorder.component';
 import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
 import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
+import { ResetemailComponent } from './resetemail/resetemail.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'reset_email',
+    component: ResetemailComponent 
   },
   {
     path: 'users',
