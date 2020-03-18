@@ -13,7 +13,7 @@ import { Resetemail } from './resetemail';
   styleUrls: ['./resetemail.component.scss']
 })
 export class ResetemailComponent implements OnInit {
-  resetemail: Resetemail = { organizerToken: '', newemail: '', resetemail: '' };
+  resetemail: Resetemail = { organizerToken: '', newEmail: '', resetemail: '' };
   currTime: number;
   disable = 'disabled';
   show: boolean;
@@ -39,7 +39,10 @@ export class ResetemailComponent implements OnInit {
     console.log(this.cToken);
   };
 
-  
+  this.resetemailFormGroup = this.fb.group({
+    token: new FormControl(this.cToken, Validators.compose([
+      Validators.required,
+    ])),
 
  
 
@@ -58,5 +61,5 @@ export class ResetemailComponent implements OnInit {
       );
     }
   }
-
+  )
 
