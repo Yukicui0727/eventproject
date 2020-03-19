@@ -15,8 +15,8 @@ export class ResetemailService {
   ) { }
 
   
-  public resetemail(payload: any): Observable<any> {
-    return this.http.post(this.fqdnApp + '/organizer-api/reset_email?oToken= xxxxxxxxxxxxx', payload);
+  public resetemail(oToken,payload: any): Observable<any> {
+    return this.http.post(this.fqdnApp + '/organizer-api/reset_email?oToken=' + oToken, payload);
   }
 }
 
