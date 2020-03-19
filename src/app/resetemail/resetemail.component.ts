@@ -13,12 +13,10 @@ import { Resetemail } from './resetemail';
   styleUrls: ['./resetemail.component.scss']
 })
 export class ResetemailComponent implements OnInit {
-  resetemail: Resetemail = { organizerToken: '', newEmail: '', resetemail: '' };
-  currTime: number;
-  disable = 'disabled';
+  resetemail: Resetemail = { organizerToken: '', newEmail: '' };
   show: boolean;
   params = { email: '' };
-  cToken = '';
+  oToken = '';
   resetemailFormGroup: FormGroup;
 
 
@@ -28,28 +26,45 @@ export class ResetemailComponent implements OnInit {
     private http: HttpClient,
     private fb: FormBuilder,
     private router: Router) { }
+
   public fg: FormGroup;
   public isLoading = false;
 
   private fqdnApp = environment.fqdnApp
 
+
+
   ngOnInit(): void {
     this.arouter.queryParams.subscribe(params =>
-      this.cToken = params.cToken)
-    console.log(this.cToken);
-  };
+      this.oToken = params.oToken)
+    console.log(this.oToken);
 
-  this.resetemailFormGroup = this.fb.group({
-    token: new FormControl(this.cToken, Validators.compose([
-      Validators.required,
-    ])),
+    /*this.fg = new FormGroup({
+      newEmail: new FormControl(),
+    })*/
 
- 
 
-    public onSubmit() {
-      console.log(this.fg.value);
-      this.isLoading = true;
-      this.ResetemailService.resetemail(this.fg.value).subscribe(
+    this.resetemailFormGroup = this.fb.group({
+      token: new FormControl(this.oToken, Validators.compose([
+        Validators.required,
+      ])),
+      email: new FormControl('', Validators.compose([
+        Validators.required, 
+      ])),
+    });
+  }
+
+  onsubmit() {
+    if (this.resetemailFormGroup.valid) {
+      let formObj = this.resetemailFormGroup.getRawValue();
+      let serialized = JSON.stringify(formObj);
+      console.log(serialized)
+      //const { token, email } = this.resetemailFormGroup.value;
+      //this.resetemail.organizerToken = token;
+
+      //this.resetemail.newEmail = email;
+      
+      this.ResetemailService.resetemail(serialized).subscribe(
         res => {
           this.isLoading = false;
           alert(res.message);
@@ -61,5 +76,4 @@ export class ResetemailComponent implements OnInit {
       );
     }
   }
-  )
-
+}

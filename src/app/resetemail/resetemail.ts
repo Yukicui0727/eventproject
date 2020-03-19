@@ -1,9 +1,8 @@
 export class Resetemail {
 
     constructor(
-        public resetemail: string,
-        public organizerToken: string,
-        public newEmail: string
+        public newEmail: string,
+        public organizerToken:string
     ) {  }
   
   }
