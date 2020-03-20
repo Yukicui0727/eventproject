@@ -3,7 +3,7 @@
     <mat-card-title>Reset Email</mat-card-title>
     <form [formGroup]="resetemailFormGroup" (ngSubmit)="onsubmit()" fxLayout="column" #resetemailForm="ngForm">
       <mat-form-field>
-        <mat-placeholder>Please Paste Token from Email</mat-placeholder>
+        <mat-placeholder>Token from Email</mat-placeholder>
         <input type="text" matInput id="token" name="token" formControlName="token" required>
       </mat-form-field>
       <br>
@@ -14,6 +14,8 @@
       <div>
         <button type="submit" mat-raised-button color="primary" style="background-color: #66A756;">Reset email</button>
       </div>
+      <br>
+        <a class="nav-link"  mat-raised-button color="primary" style="background-color: #66A756;"routerLink="/users/organizer">Account information</a> 
     </form>
   </mat-card>
 </main>

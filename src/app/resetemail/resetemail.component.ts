@@ -36,15 +36,12 @@ export class ResetemailComponent implements OnInit {
 
   
 
-
-
   ngOnInit(): void {
     this.arouter.queryParams.subscribe(params =>
       this.oToken = params.oToken)
     console.log(this.oToken);
 
     
-
 
     this.resetemailFormGroup = this.fb.group({
      token: new FormControl(this.oToken, Validators.compose([
