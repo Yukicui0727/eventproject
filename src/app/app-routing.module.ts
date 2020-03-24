@@ -21,6 +21,7 @@ import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomer
 import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
 import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
 import { ResetemailComponent } from './resetemail/resetemail.component';
+import { SearchOrganizerComponent } from './search-organizer/search-organizer.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'reset_email',
     component: ResetemailComponent 
+  },
+  {
+    path: 'search',
+    component: SearchOrganizerComponent 
   },
   {
     path: 'users',
@@ -63,7 +68,7 @@ const routes: Routes = [
       },
       {
         path: 'organizer',
-        component: OrganizerComponent
+        component: OrganizerComponent 
       },
       {
         path: 'customer',

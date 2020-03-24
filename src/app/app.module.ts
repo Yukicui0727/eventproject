@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
@@ -57,6 +58,8 @@ import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomer
 import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
 import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
 import { ResetemailComponent } from './resetemail/resetemail.component';
+import { SearchOrganizerComponent } from './search-organizer/search-organizer.component';
+
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { ResetemailComponent } from './resetemail/resetemail.component';
     DeletecustomerorderComponent,
     CreateCustomerOrderRefundComponent,
     ResetemailComponent,
+    SearchOrganizerComponent,
+    
+   
    
 
   ],
@@ -103,6 +109,7 @@ import { ResetemailComponent } from './resetemail/resetemail.component';
     MatIconModule,
     MatInputModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatListModule,
     MatCardModule,
     MatTableModule,

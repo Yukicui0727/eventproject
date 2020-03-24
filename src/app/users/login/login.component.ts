@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../shared/services/auth.service';
-import {Router} from '@angular/router';
-import {User} from '../../shared/models/user';
+import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
+import { Organizerlogin } from '../../shared/models/organizerlogin';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +9,17 @@ import {User} from '../../shared/models/user';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   err = false;
   fbSub;
 
+  organizerlogin: Organizerlogin = { email_address: '', password: '' };
   constructor(
     private as: AuthService,
-    private router: Router
+    private router: Router,
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   onSubmit(user) {
     console.log(user);
@@ -31,17 +32,4 @@ export class LoginComponent implements OnInit {
         }
       });
   }
-
-  
-
-  onRegister() {
-    this.router.navigate(['/users/register']);
-  }
-
-  updateErr() {
-    if (this.err) {
-      this.err = false;
-    }
-  }
-
 }

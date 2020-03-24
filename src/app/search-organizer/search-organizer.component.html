@@ -1,0 +1,19 @@
+<div class="organizer-search-wrapper">
+    <h4>Search Organizer</h4>
+    <form class="organizer-search-form" >
+        <div class="search-row">
+            <input type="text" [formControl]="Organizer_ID" placeholder="Organizer ID">
+            <button [disabled]="isLoading" mat-raised-button (click)="onSearch()">Search</button>
+        </div>
+    </form>
+
+    <div class="organizer-result-wrapper">
+        <div *ngFor="let searchedOrganizer of searchedOrganizers">
+            <ul>
+                <li *ngFor="let item of searchedOrganizer | keyvalue">
+                    {{item.key}}: {{item.value}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

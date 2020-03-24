@@ -21,7 +21,7 @@ export class OrganizerService {
   public editOrganizer(payload: any): Observable<any> {
     return this.http.put(this.fqdnApp + '/organizer-api/organizer/update', payload);
   }
-  public searchOrganizer(id: string): Observable<any> {
+  public searchOrganizer(id: number): Observable<any> {
     return this.http.get(this.fqdnApp + '/organizer-api/organizer/search/' + id);
   }
   public deleteOrganizer(id: string): Observable<any> {
