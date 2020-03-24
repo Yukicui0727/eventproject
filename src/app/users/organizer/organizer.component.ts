@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-
+import { CookieService } from "ngx-cookie-service";
 
 
 
@@ -24,9 +24,11 @@ export class OrganizerComponent implements OnInit {
   @Input() model:any = {};
   constructor(
     private http: HttpClient,
-    private organizerService: OrganizerService
+    private organizerService: OrganizerService,
+    private cookieService: CookieService
   ) { }
-  Organizer_ID = 1311;
+  
+  Organizer_ID = Number(this.cookieService.get("OrganizerID"));
 
   ngOnInit(){
   //this.model = new Organizer(1311, 'enfecems1@gmail.com', 'regal2', 'theater','bunny', 24, '12345678', 'regal.com', 339, '188 SW ST', 'Suite 12', 'bellevue', 'WA', '98005');
@@ -143,7 +145,7 @@ onSaveaddress() {
 }
 
 Cancel() {
-  this.model = Object.assign({}, this.Copymodel);this.display_personal = true;  this.display_basic = true; this.display_contact = true; this.display_address = true;
+  this.display_personal = true;  this.display_basic = true; this.display_contact = true; this.display_address = true;
 }
 
 get diagnostic() { return JSON.stringify(this.model); }

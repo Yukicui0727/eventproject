@@ -8,7 +8,7 @@ import { HeaderComponent } from './commons/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { LoginComponent } from './users/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { ProductsComponent } from './products/products.component';

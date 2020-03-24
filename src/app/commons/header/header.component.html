@@ -8,28 +8,22 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/users/organizer">Organizer</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/search">Organizer Search</a>
-        </li> 
+        </li>  
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item float-right">
           <a mat-icon-button routerLink="/shopping-cart">
             <mat-icon class="mat-icon material-icons" [matBadge]="itemsCount$ | async" matBadgePosition="above after" matBadgeColor="accent">shopping_cart</mat-icon>
           </a>
-            <span *ngIf="(authService.userSubject | async); else login">
-            <a routerLink="/users/user-info" mat-icon-button>
-              <mat-icon class="mat-icon material-icons">account_circle</mat-icon>
-            </a>
-            <a (click)="logout()" mat-icon-button>
-              <mat-icon class="mat-icon material-icons">exit_to_app</mat-icon>
-            </a>
-              {{(authService.userSubject | async).name}}
-          </span>
-          <ng-template #login>
-            <a class="nav-link" routerLink="/users/login">Login</a>
-          </ng-template>                
+
+          <ul>
+            <li>
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li> 
+          <li>
+            <a class="nav-link" (click)="logout()" routerLink="/home">Logout</a>
+          </li>     
+          </ul>           
         </li>
       </ul>
     </div>

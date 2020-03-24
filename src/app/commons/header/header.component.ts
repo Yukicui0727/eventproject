@@ -5,6 +5,7 @@ import {select, Store} from '@ngrx/store';
 import {Item} from '../../shared/models/item';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   itemsCount$: Observable<number>;
   constructor(public authService: AuthService,
               private shoppingCartService: ShoppingCartService,
-              private store: Store<{items: Item[]}>) {
+              private store: Store<{items: Item[]}>,
+              private cookieService: CookieService) {
     this.itemsCount$ = store.pipe(
       select('items'),
       map((items: Item[]) => {
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
   logout() {
+    this.cookieService.deleteAll()
   }
 
 }
