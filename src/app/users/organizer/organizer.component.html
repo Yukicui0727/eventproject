@@ -9,7 +9,8 @@
           <input type="text" class="form-control" id="Email Address"
                  [(ngModel)]="model.email_address" name="emailaddress">
         </div>
-        <button type="button" class="btn btn-default" (click)="Cancel();">Cancel</button>
+        <button type="button" class="btn btn-default"  (click)="Cancel();">Cancel</button>
+        <br>
         <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="display_personal=true">Change</button>
       </form>
     </div>
@@ -22,7 +23,7 @@
           <div class="col-xs-9">{{ model.email_address }}</div>
         </div>
         <br>
-        <button class="btn btn-primary" (click)="display_personal=false">Edit</button>
+        <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_personal=false">Edit</button>
       </div>
         
       <div [hidden]="display_basic">
@@ -59,7 +60,7 @@
       <div class="col-xs-9">{{ model.other_details }}</div>
     </div>
     <br>
-    <button class="btn btn-primary" (click)="display_basic=false">Edit</button>
+    <button class="btn btn-primary" mat-raised-button color="primary"(click)="display_basic=false">Edit</button>
   </div>
 
     <br>
@@ -107,7 +108,7 @@
       <div class="col-xs-9">{{ model.web_site_address }}</div>
     </div>
    <br>
-    <button class="btn btn-primary" (click)="display_contact=false">Edit</button>
+    <button class="btn btn-primary" mat-raised-button color="primary"(click)="display_contact=false">Edit</button>
     </div>
     <br>
       <hr>
@@ -176,7 +177,7 @@
       <div class="col-xs-9">{{ model.zipcode }}</div>
     </div>
    <br>
-    <button class="btn btn-primary" (click)="display_address=false">Edit</button>
+    <button class="btn btn-primary" mat-raised-button color="primary"(click)="display_address=false">Edit</button>
     </div>
   
 
