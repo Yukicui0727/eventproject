@@ -35,7 +35,17 @@ export class OrderService {
     return this.http.get(this.fqdnApp + '/organizerOrder-api/organizerorder/delete/' + id);
   }
   public searchCustomerorder(id: string): Observable<any> {
-    return this.http.get(this.fqdnApp + '/customerOrder-api/CustomerOrderByCID/' + id);
+      let headersOpt = new HttpHeaders(); 
+      console.log("CustomerID");
+      this.createAuthorizationHeader(headersOpt); 
+      var headersOpt1 = {
+        headers: new HttpHeaders(
+          {
+            'Authorization':'Basic ' + btoa('admin:Enfec@13'),
+          }
+        )
+      }
+    return this.http.get(this.fqdnApp + '/CustomerOrder-api/CustomerOrderByCID/' + id,headersOpt1);
   }
   public deleteCustomerrorder(id: string): Observable<any> {
     return this.http.get(this.fqdnApp + '/customerOrder-api/CustomerOrder/Delete/' + id);
