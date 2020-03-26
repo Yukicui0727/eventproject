@@ -1,14 +1,52 @@
-<div class="orders-wrapper">
-    <div class="orders-navigator">
-        <ul class="orders-navigator-wrapper">
-            <li routerLinkActive="active-link" routerLink="/orders/organizerOrder">Organizer order</li>
-            <ul> <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/Get">Get Organizer order</li>
-                <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/Create">Create Organizer order</li>
-                <li routerLinkActive="active-link" routerLink="/orders/organizerOrder/delete">Delete Organizer order</li>
-            </ul>
-            <li routerLinkActive="active-link" routerLink="/orders/customerOrder">Customer Order</li>
-        </ul>
+<div class="container">
+    <h3>Purchase History</h3>
+    <hr>
+    <div [hidden]="!display_order">
+        <div class="row">
+        <div class="col-xs-3">
+            <p>Organizer Order ID:</p>
+        </div>
+        <div class="col-xs-9">{{ model.organizerOrderID }}</div>
     </div>
 
-    <router-outlet></router-outlet>
+    <div class="row">
+        <div class="col-xs-3">
+            <p>Event ID:</p>
+        </div>
+        <div class="col-xs-9">{{ model.eventID }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <p>Date Time:</p>
+        </div>
+        <div class="col-xs-9">{{ model.dateTime }}</div>
+    </div>
+    <br>
+    <br>
+    <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_order=false">Refund</button>
 </div>
+
+<!-- ====================================================  -->
+<div>
+    <form>
+
+        <!-- ... all of the form ... -->
+
+    </form>
+</div>
+
+<!-- ====================================================  -->
+<hr>
+<style>
+    .no-style .ng-valid {
+        border-left: 10px solid #CCC
+    }
+
+    .no-style .ng-valid {
+        justify-content: center;
+    }
+
+    .no-style .ng-invalid {
+        border-left: 5px solid #CCC
+    }
+</style>

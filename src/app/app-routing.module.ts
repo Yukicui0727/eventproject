@@ -22,11 +22,42 @@ import { DeletecustomerorderComponent } from './orders/deletecustomerorder/delet
 import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
 import { ResetemailComponent } from './resetemail/resetemail.component';
 import { SearchOrganizerComponent } from './search-organizer/search-organizer.component';
+import {OrganizerAccountComponent} from'./organizer-account/organizer-account.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'orders',
+    component:OrdersComponent,
+    children: [
+      {
+        path: 'delete',
+        component: DeleteorganizerorderComponent
+      },
+      {
+        path: 'organizerorder/getorganizerorder',
+        component: GetorganizerorderComponent
+      },
+      {
+        path: 'organizerorder/deleteorganizerorder',
+        component: DeleteorganizerorderComponent
+      },
+      {
+        path: 'getcustomerorder',
+        component: GetcustomerorderComponent
+      },
+      {
+        path: 'deletecustomerorder',
+        component: DeletecustomerorderComponent
+      },
+    ]
+  },
+  {
+    path: 'organizer_account',
+    component: OrganizerAccountComponent
   },
   {
     path: 'login',
@@ -102,31 +133,7 @@ const routes: Routes = [
         path: 'shopping-cart',
         component: ShoppingCartComponent
       },
-      {
-        path: 'orders',
-        children: [
-          {
-            path: 'delete',
-            component: DeleteorganizerorderComponent
-          },
-          {
-            path: 'organizerorder/getorganizerorder',
-            component: GetorganizerorderComponent
-          },
-          {
-            path: 'organizerorder/deleteorganizerorder',
-            component: DeleteorganizerorderComponent
-          },
-          {
-            path: 'getcustomerorder',
-            component: GetcustomerorderComponent
-          },
-          {
-            path: 'deletecustomerorder',
-            component: DeletecustomerorderComponent
-          },
-        ]
-      },
+      
       {
         path: '',
         redirectTo: 'home',

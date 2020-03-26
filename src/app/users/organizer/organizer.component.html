@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Account Information</h3>
+  <h3>Account Information</h3>
     <br>
     <div [hidden]="display_personal">
     <h4>Personal Information</h4>
@@ -10,7 +10,6 @@
                  [(ngModel)]="model.email_address" name="emailaddress">
         </div>
         <button type="button" class="btn btn-default"  (click)="Cancel();">Cancel</button>
-        <br>
         <button type="submit" class="btn btn-success" [disabled]="!organizerForm.form.valid" (click)="display_personal=true">Change</button>
       </form>
     </div>
@@ -179,7 +178,12 @@
    <br>
     <button class="btn btn-primary" mat-raised-button color="primary"(click)="display_address=false">Edit</button>
     </div>
-  
+  <br>
+  <hr>
+    <div [hidden]="!display_purchase">
+      <h4>Purchase history</h4>   
+      <button class="btn btn-primary" mat-raised-button color="primary" routerLinkActive="active-link" routerLink="/orders">Search</button>
+    </div>
 
 
 

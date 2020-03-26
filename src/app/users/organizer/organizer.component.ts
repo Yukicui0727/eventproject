@@ -15,12 +15,7 @@ import { CookieService } from "ngx-cookie-service";
   styleUrls: ['./organizer.component.scss']
 })
 export class OrganizerComponent implements OnInit {
-  /*GET response1, response2, response3
-
-  parsedResponse1 = {"organizer_id": 1311, "email_address": "enfecems1@gmail.com" ...};
-  parsedResponse2 = {"organizer_id": 1311, "email_address": "enfec***", "organizer_address": "***", ...}; 
-  parsedResponse3 = {"organizer_id": 1311, "email_address": "enfec***", "contact_name": "enfec", ...}; 
-  model2 = new Organizer(response1.get(0), response2.organizer_address, ...); */
+  
   @Input() model:any = {};
   constructor(
     private http: HttpClient,
@@ -54,31 +49,14 @@ export class OrganizerComponent implements OnInit {
   display_basic = true;
   display_contact = true;
   display_address = true;
+  display_purchase = true;
   OrganizerService: any;
 
 
 
   private fqdnApp = environment.fqdnApp
 
- /* getOrganizerBasicInfo(id: number): Observable<Object>{
-    this.isLoading = true;
-    this.searchedOrganizers = [];
-    this.organizerService.searchOrganizer(id).subscribe(
-      res => {
-        this.isLoading = false;
-        if (res.message) {
-          alert(res.message);
-          return;
-        }
-        this.searchedOrganizers = res;
-      },
-      error => {
-        this.isLoading = false;
-        alert(JSON.stringify(error.error));
-      }
-    );
-    return searched
-  }*/
+ 
 
   onSavepersonal(){
     var options = {
