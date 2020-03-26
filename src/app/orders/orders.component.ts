@@ -12,8 +12,9 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
+  orders= [];
 
-  @Input() model:any = {};
+ 
   constructor(
     private http: HttpClient,
     private orderService: OrderService,
@@ -29,8 +30,7 @@ export class OrdersComponent implements OnInit {
           alert(res.message);
           return;
         }
-        res[0]
-        this.model = res[0];
+    this.orders = res;
       },
       error => {
         alert(JSON.stringify(error.error));
@@ -39,7 +39,6 @@ export class OrdersComponent implements OnInit {
   }
   
   
-  Copymodel = Object.assign({}, this.model);
 
   display_order =true;
   OrderService: any;
@@ -49,19 +48,5 @@ export class OrdersComponent implements OnInit {
 
 
 
-  onSaveorder() {
-    var options = {
-      "organizerOrderID": this.model.organizerOrderID,
-      "eventID": this.model.eventID,
-      "organizerID": this.model.organizerID,
-      "dateTime": this.model.dateTime
-    };
-  }
-
-Cancel() {
-  this.display_order = true;  
-}
-
-get diagnostic() { return JSON.stringify(this.model); }
-
+  
 }
