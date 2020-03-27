@@ -1,14 +1,12 @@
 <div class="container">
-    <h3>Purchase History</h3>
+    <h3>Refund</h3>
     <hr>
     <ul>
-        <li *ngFor="let order of orders">
-            <form (ngSubmit)="onrefundorganizer(order)" #orderForm="ngForm">
-                <p> Order ID:{{ order.organizerOrderID }}</p>
-                <p> Event ID:{{ order.eventID }}<p>
-                <p> Date Time:{{ order.dateTime }}</p>
-            <button type="submit" class="btn btn-success" mat-raised-button color="primary">Refund</button>
-            </form>
+        <li *ngFor="let refund of refunds">
+                <p> Refund ID:{{ refund.refund_id }}</p>
+                <p> Organizer Order ID:{{ refund.oorder_id }}<p>
+                <p> Refund Update Time:{{ refund.refund_updated_time}}</p>
+                <p> Refund Status:{{ refund.refund_status}}</p>     
         </li>
     </ul>
     <br>

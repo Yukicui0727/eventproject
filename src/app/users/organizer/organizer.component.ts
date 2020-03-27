@@ -50,6 +50,7 @@ export class OrganizerComponent implements OnInit {
   display_contact = true;
   display_address = true;
   display_purchase = true;
+  display_refund =true;
   OrganizerService: any;
 
 

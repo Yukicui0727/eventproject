@@ -12,14 +12,14 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { OrganizerorderComponent } from './orders/organizerorder/organizerorder.component';
 import { DeleteorganizerorderComponent } from './orders/organizerorder/deleteorganizerorder/deleteorganizerorder.component';
 import { GetorganizerorderComponent } from './orders/organizerorder/getorganizerorder/getorganizerorder.component';
-import { RefundComponent } from './users/refund/refund.component';
-import { CreateOrganizerOrderRefundComponent } from './users/refund/create-organizer-order-refund/create-organizer-order-refund.component';
+import { RefundComponent } from './refund/refund.component';
+import { CreateOrganizerOrderRefundComponent } from './refund/create-organizer-order-refund/create-organizer-order-refund.component';
 import { SeatComponent } from './seat/seat.component';
 import { AddSeatComponent } from './seat/add-seat/add-seat.component';
 import { CustomerComponent } from './customer/customer.component';
 import { GetcustomerorderComponent } from './orders/getcustomerorder/getcustomerorder.component';
 import { DeletecustomerorderComponent } from './orders/deletecustomerorder/deletecustomerorder.component';
-import { CreateCustomerOrderRefundComponent } from './users/refund/create-customer-order-refund/create-customer-order-refund.component';
+import { CreateCustomerOrderRefundComponent } from './refund/create-customer-order-refund/create-customer-order-refund.component';
 import { ResetemailComponent } from './resetemail/resetemail.component';
 import { SearchOrganizerComponent } from './search-organizer/search-organizer.component';
 import {OrganizerAccountComponent} from'./organizer-account/organizer-account.component';
@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'refund',
+    component: RefundComponent  
   },
   {
     path: 'orders',
@@ -75,20 +79,6 @@ const routes: Routes = [
     path: 'users',
     component: OrganizerComponent,
     children: [
-      {
-        path: 'refund',
-        children: [
-          {
-            path: 'CreateOrganizer',
-            component: CreateOrganizerOrderRefundComponent
-          },
-          {
-            path: 'CreateCustomer',
-            component: CreateCustomerOrderRefundComponent
-          }
-        ]
-      },
-
       {
         path: 'register',
         component: RegisterComponent
