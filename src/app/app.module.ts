@@ -61,6 +61,7 @@ import { ResetemailComponent } from './resetemail/resetemail.component';
 import { SearchOrganizerComponent } from './search-organizer/search-organizer.component';
 import { OrganizerAccountComponent } from './organizer-account/organizer-account.component';
 import { CustomerOrderComponent } from './customer-order/customer-order.component';
+import { CustomerRefundComponent } from './customer-refund/customer-refund.component';
 
 
 @NgModule({
@@ -99,6 +100,7 @@ import { CustomerOrderComponent } from './customer-order/customer-order.componen
     SearchOrganizerComponent,
     OrganizerAccountComponent,
     CustomerOrderComponent,
+    CustomerRefundComponent,
     
    
    

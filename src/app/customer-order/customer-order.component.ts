@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OrderService } from 'src/app/shared/services/order.service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from "ngx-cookie-service";
+import { OnInit } from '@angular/core';
+import { RefundService } from 'src/app/shared/services/refund.service';
 
 @Component({
   selector: 'app-customer-order',
@@ -16,6 +18,7 @@ export class CustomerOrderComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private orderService: OrderService,
+    private refundService: RefundService,
     private cookieService: CookieService
   ) { }
 
@@ -36,11 +39,21 @@ export class CustomerOrderComponent implements OnInit {
     );
   }
 
-  display_order = true;
+  
   OrderService: any;
 
 
   private fqdnApp = environment.fqdnApp
 
+  onrefundcustomer(order) {
+    console.log(order);
+    let myVar = { corder_id: order.customerOrderID };
+    console.log(myVar);
+    this.refundService.CreateCustomerOrderRefund(myVar).subscribe(
+      res => {        
+        alert(res.message);
+      }
+    );
+  }
 }
 

@@ -1,13 +1,21 @@
-<div [hidden]="!display_order">
+<div class="container">
+    <h3>Purchase History</h3>
+    <hr>
     <ul>
-    <li *ngFor="let order of orders">
-        <p> Order ID:{{ order.customerOrderID }}</p>
-        <p> Order Time:{{ order.orderTime }}<p> 
+        <li *ngFor="let order of orders">
+            <form (ngSubmit)="onrefundcustomer(order)" #orderForm="ngForm">
+                <p> Order ID:{{ order.customerOrderID }}</p>
+                <p> Order Time:{{ order.orderTime }}<p>
+                <p> Order Status:{{ order.orderStatus }}<p> 
+                <p> Stripe Status:{{ order.stripeStatus }}<p> 
+                <p> Stripe Charge ID:{{ order. stripeChargeID }}<p> 
         <button class="btn btn-primary" mat-raised-button color="primary">Refund</button>
-    </li>
+            </form>
+        </li>
     </ul>
-<br>
+    <br>
 </div>
+
 
 <!-- ====================================================  -->
 <div>

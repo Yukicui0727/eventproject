@@ -41,7 +41,7 @@ export class OrdersComponent implements OnInit {
     );
   }
 
-  display_order = true;
+ 
   OrderService: any;
  
 

@@ -62,6 +62,30 @@ export class  RefundService{
   
 
   public CreateCustomerOrderRefund(payload: any): Observable<any> {
-    return this.http.post(this.fqdnApp + '/customer_refund/create', payload);
+    let headersOpt = new HttpHeaders(); 
+  console.log("CustomerID");
+  this.createAuthorizationHeader(headersOpt); 
+  var headersOpt1 = {
+    headers: new HttpHeaders(
+      {
+        'Authorization':'Basic ' + btoa('admin:Enfec@13'),
+      }
+    )
   }
+    return this.http.post(this.fqdnApp + '/refund-api/customer_refund/create', payload,headersOpt1);
+  }
+  
+  public searchCustomerrefund(id: string): Observable<any> {
+    let headersOpt = new HttpHeaders(); 
+    console.log("CustomerID");
+    this.createAuthorizationHeader(headersOpt); 
+    var headersOpt1 = {
+      headers: new HttpHeaders(
+        {
+          'Authorization':'Basic ' + btoa('admin:Enfec@13'),
+        }
+      )
+    }
+    return this.http.get(this.fqdnApp + '/refund-api/customer_refund/get_customer_refund/' + id , headersOpt1);
+  }  
 }

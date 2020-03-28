@@ -5,13 +5,12 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from "ngx-cookie-service";
 import { OnInit } from '@angular/core';
-
 @Component({
-  selector: 'app-refund',
-  templateUrl: './refund.component.html',
-  styleUrls: ['./refund.component.scss']
+  selector: 'app-customer-refund',
+  templateUrl: './customer-refund.component.html',
+  styleUrls: ['./customer-refund.component.scss']
 })
-export class RefundComponent implements OnInit {
+export class CustomerRefundComponent implements OnInit {
   refunds = [];
   @Input() model: any = {};
   constructor(
@@ -20,10 +19,10 @@ export class RefundComponent implements OnInit {
     private cookieService: CookieService
   ) { }
 
-  Organizer_ID = Number(this.cookieService.get("OrganizerID"));
+  Customer_ID = Number(this.cookieService.get("CustomerID"));
 
   ngOnInit() {
-    this.refundService.searchOrganizerrefund(this.Organizer_ID + "").subscribe(
+    this.refundService.searchCustomerrefund(this.Customer_ID + "").subscribe(
       res => {
         if (res.message) {
           alert(res.message);
@@ -44,4 +43,3 @@ export class RefundComponent implements OnInit {
   private fqdnApp = environment.fqdnApp
 
 }
-
