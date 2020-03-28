@@ -3,37 +3,17 @@
     <hr>
     <ul>
         <li *ngFor="let refund of refunds">
-                <p> Refund ID:{{ refund.refund_id }}</p>
-                <p> Organizer Order ID:{{ refund.oorder_id }}<p>
-                <p> Refund Update Time:{{ refund.refund_updated_time}}</p>
-                <p> Refund Status:{{ refund.refund_status}}</p>     
+            <strong [style.color]="refund.color">Refund ID:{{ refund.refund_id }}</strong>
+            <br>
+            <div class="Refund">
+             <span #Organizer Order ID class="item">Organizer Order ID:{{ refund.oorder_id }}</span>
+            <br>
+            <span #Refund Update Time class="item">Refund Update Time:{{ refund.refund_updated_time}}</span>
+            <br>
+            <span #Refund Status class="item">Refund Status:{{ refund.refund_status}}</span>
+        </div>    
         </li>
     </ul>
     <br>
 </div>
 
-
-<!-- ====================================================  -->
-<div>
-    <form>
-
-        <!-- ... all of the form ... -->
-
-    </form>
-</div>
-
-<!-- ====================================================  -->
-<hr>
-<style>
-    .no-style .ng-valid {
-        border-left: 10px solid #CCC
-    }
-
-    .no-style .ng-valid {
-        justify-content: center;
-    }
-
-    .no-style .ng-invalid {
-        border-left: 5px solid #CCC
-    }
-</style>
