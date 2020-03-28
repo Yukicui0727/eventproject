@@ -51,7 +51,7 @@ export class CustomerOrderComponent implements OnInit {
     console.log(myVar);
     this.refundService.CreateCustomerOrderRefund(myVar).subscribe(
       res => {        
-        alert(res.message);
+        alert(res["Customer refund ID"]);
       }
     );
   }
