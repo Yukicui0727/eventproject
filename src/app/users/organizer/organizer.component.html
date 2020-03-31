@@ -7,7 +7,7 @@
           <div [hidden]="display_personal">
             <form fxLayout="column" form (ngSubmit)="onSavepersonal()" #organizerForm="ngForm">
               <div class="form-group">
-                <label for="email address">Email Address</label>
+                <label for="email address">Email Address:</label>
                 <input type="text" class="form-control" id="Email Address" [(ngModel)]="model.email_address"
                   name="emailaddress">
               </div>
@@ -59,7 +59,6 @@
       <hr>
 
       <div [hidden]="!display_basic">
-        <h4>Basic Information</h4>
         <br>
         <div class="row">
           <div class="col-xs-3">
@@ -174,7 +173,6 @@
        
 
       <div [hidden]="!display_address">
-        <h4>Address</h4>
         <div class="row">
           <div class="col-xs-3">Street1:</div>
           <div class="col-xs-9">{{ model.street1 }}</div>
