@@ -16,22 +16,23 @@
                 (click)="display_personal=true">Change</button>
             </form>
           </div>
-       
 
-      <br>
-      <hr>
-      <div [hidden]="!display_personal">
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Email Address:</p>
+
+          <br>
+          <hr>
+          <div [hidden]="!display_personal">
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Email Address:</p>
+              </div>
+              <div class="col-xs-9">{{ model.email_address }}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" mat-raised-button color="primary"
+              (click)="display_personal=false">Edit</button>
           </div>
-          <div class="col-xs-9">{{ model.email_address }}</div>
         </div>
-        <br>
-        <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_personal=false">Edit</button>
-      </div>
-    </div>
-  </mat-tab>
+      </mat-tab>
 
       <mat-tab label="Basic Information">
         <div class="example-large-box mat-elevation-z4">
@@ -54,30 +55,31 @@
                 (click)="display_basic=true">Save</button>
             </form>
           </div>
-       
-      <br>
-      <hr>
 
-      <div [hidden]="!display_basic">
-        <br>
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Organizer Name:</p>
-          </div>
-          <div class="col-xs-9">{{ model.organizer_name }}</div>
-        </div>
+          <br>
+          <hr>
 
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Other Details:</p>
+          <div [hidden]="!display_basic">
+            <br>
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Organizer Name:</p>
+              </div>
+              <div class="col-xs-9">{{ model.organizer_name }}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Other Details:</p>
+              </div>
+              <div class="col-xs-9">{{ model.other_details }}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" mat-raised-button color="primary"
+              (click)="display_basic=false">Edit</button>
           </div>
-          <div class="col-xs-9">{{ model.other_details }}</div>
         </div>
-        <br>
-        <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_basic=false">Edit</button>
-      </div>
-    </div>
-  </mat-tab>
+      </mat-tab>
 
       <br>
       <hr>
@@ -107,34 +109,34 @@
                 (click)="display_contact=true">Save</button>
             </form>
           </div>
-       
 
-      <div [hidden]="!display_contact">
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Contact Name:</p>
+
+          <div [hidden]="!display_contact">
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Contact Name:</p>
+              </div>
+              <div class="col-xs-9">{{ model.contact_name }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">Telephone:</div>
+              <div class="col-xs-9">{{ model.telephone }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Website address:</p>
+              </div>
+              <div class="col-xs-9">{{ model.web_site_address }}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" mat-raised-button color="primary"
+              (click)="display_contact=false">Edit</button>
           </div>
-          <div class="col-xs-9">{{ model.contact_name }}</div>
         </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">Telephone:</div>
-          <div class="col-xs-9">{{ model.telephone }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Website address:</p>
-          </div>
-          <div class="col-xs-9">{{ model.web_site_address }}</div>
-        </div>
-        <br>
-        <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_contact=false">Edit</button>
-      </div>
-    </div>
-  </mat-tab>
-      <br>
-      <hr>
+      </mat-tab>
+
 
       <mat-tab label="Address Information">
         <div class="example-large-box mat-elevation-z4">
@@ -170,40 +172,61 @@
                 (click)="display_address=true">Save</button>
             </form>
           </div>
-       
 
-      <div [hidden]="!display_address">
-        <div class="row">
-          <div class="col-xs-3">Street1:</div>
-          <div class="col-xs-9">{{ model.street1 }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">Street2:</div>
-          <div class="col-xs-9">{{ model.street2 }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">City:</div>
-          <div class="col-xs-9">{{ model.city }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">State:</div>
-          <div class="col-xs-9">{{ model.state }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-xs-3">
-            <p>Zip code:</p>
+
+          <div [hidden]="!display_address">
+            <div class="row">
+              <div class="col-xs-3">Street1:</div>
+              <div class="col-xs-9">{{ model.street1 }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">Street2:</div>
+              <div class="col-xs-9">{{ model.street2 }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">City:</div>
+              <div class="col-xs-9">{{ model.city }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">State:</div>
+              <div class="col-xs-9">{{ model.state }}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-3">
+                <p>Zip code:</p>
+              </div>
+              <div class="col-xs-9">{{ model.zipcode }}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" mat-raised-button color="primary"
+              (click)="display_address=false">Edit</button>
           </div>
-          <div class="col-xs-9">{{ model.zipcode }}</div>
         </div>
-        <br>
-        <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_address=false">Edit</button>
-      </div>
-    </div>
+      </mat-tab>
+
+      <mat-tab label="Purchase history">
+        <div class="example-large-box mat-elevation-z4">
+          <div [hidden]="!display_purchase">
+            <h4>Purchase history</h4>
+            <button class="btn btn-primary" mat-raised-button color="primary" routerLinkActive="active-link"
+              routerLink="/orders">Search</button>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Refund">
+        <div class="example-large-box mat-elevation-z4">
+          <div [hidden]="!display_refund">
+            <h4>Refund</h4>
+            <button class="btn btn-primary" mat-raised-button color="primary" routerLinkActive="active-link"
+              routerLink="/refund">Search</button>
+          </div>
+        </div>
   </mat-tab>
-    </mat-tab-group>
+  </mat-tab-group>
   </mat-card>
 </div>
