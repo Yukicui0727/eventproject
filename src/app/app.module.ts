@@ -62,7 +62,7 @@ import { SearchOrganizerComponent } from './search-organizer/search-organizer.co
 import { OrganizerAccountComponent } from './organizer-account/organizer-account.component';
 import { CustomerOrderComponent } from './customer-order/customer-order.component';
 import { CustomerRefundComponent } from './customer-refund/customer-refund.component';
-
+import { MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -111,6 +111,7 @@ import { CustomerRefundComponent } from './customer-refund/customer-refund.compo
     AppRoutingModule,
     HttpClientModule,
     MatButtonModule,
+    MatTabsModule,
     MatToolbarModule,
     MatIconModule,
     MatInputModule,

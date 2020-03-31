@@ -4,7 +4,6 @@
     <mat-tab-group dynamicHeight>
       <mat-tab label="Personal Information">
         <div class="example-small-box mat-elevation-z4">
-
           <div [hidden]="display_personal">
             <form fxLayout="column" form (ngSubmit)="onSavepersonal()" #organizerForm="ngForm">
               <div class="form-group">
@@ -17,8 +16,7 @@
                 (click)="display_personal=true">Change</button>
             </form>
           </div>
-        </div>
-      </mat-tab>
+       
 
       <br>
       <hr>
@@ -32,6 +30,8 @@
         <br>
         <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_personal=false">Edit</button>
       </div>
+    </div>
+  </mat-tab>
 
       <mat-tab label="Basic Information">
         <div class="example-large-box mat-elevation-z4">
@@ -54,8 +54,7 @@
                 (click)="display_basic=true">Save</button>
             </form>
           </div>
-        </div>
-      </mat-tab>
+       
       <br>
       <hr>
 
@@ -78,6 +77,8 @@
         <br>
         <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_basic=false">Edit</button>
       </div>
+    </div>
+  </mat-tab>
 
       <br>
       <hr>
@@ -107,8 +108,7 @@
                 (click)="display_contact=true">Save</button>
             </form>
           </div>
-        </div>
-      </mat-tab>
+       
 
       <div [hidden]="!display_contact">
         <div class="row">
@@ -132,7 +132,8 @@
         <br>
         <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_contact=false">Edit</button>
       </div>
-
+    </div>
+  </mat-tab>
       <br>
       <hr>
 
@@ -170,8 +171,7 @@
                 (click)="display_address=true">Save</button>
             </form>
           </div>
-        </div>
-      </mat-tab>
+       
 
       <div [hidden]="!display_address">
         <h4>Address</h4>
@@ -204,8 +204,8 @@
         <br>
         <button class="btn btn-primary" mat-raised-button color="primary" (click)="display_address=false">Edit</button>
       </div>
-      <br>
-      <hr>
+    </div>
+  </mat-tab>
     </mat-tab-group>
   </mat-card>
 </div>
