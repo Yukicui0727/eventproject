@@ -53,7 +53,7 @@ export class OrdersComponent implements OnInit {
     console.log(myVar);
     this.refundService.CreateOrganizerOrderRefund(myVar).subscribe(
     res => {
-     alert(res["Organizer refund ID"]);
+     alert(res.message);
       }    
     );
   }
